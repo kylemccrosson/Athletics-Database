@@ -6,7 +6,7 @@ Run the SQL file to create the athletics database on your local server.
 You may choose to import data into the server but this is not necessary.
 
 Running the Java program will now prompt you to enter a username and password to access your database (these you should have set up when creating your server).
-Once the server is accessed you will have the ability to add to, remove, and search aspects of the database.
+Once the server is accessed you will have the ability to add, remove, and search aspects of the database.
 The program will lead you with prompts to determine which actions you wish to take.
 
 The Add function lets you add athletes, teams, coaches, and games to the database.
