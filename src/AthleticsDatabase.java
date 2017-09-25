@@ -48,7 +48,7 @@ public class AthleticsDatabase {
 
     while (cont) {
       System.out.println("\nWhat would you like to do?");
-      System.out.println("[add/remove/edit/search] a [athlete/coach/game/team], or [exit]");
+      System.out.println("[add/remove/search] [athlete/coach/game/team], or [exit]");
 
       String action = scan.next().toLowerCase();
 
@@ -63,8 +63,6 @@ public class AthleticsDatabase {
         case "add": add(object);
           break;
         case "remove": remove(object);
-          break;
-        case "edit": edit(object);
           break;
         case "search": search(object);
           break;
@@ -234,8 +232,6 @@ public class AthleticsDatabase {
     }
 	  
   }
-
-  public void edit(String object) {}
 
   public void search(String object) {
 
