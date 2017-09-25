@@ -7,12 +7,14 @@ import java.sql.Statement;
 import java.util.Properties;
 import java.util.Scanner;
 
-
+/**
+ * Allows for the connection to a local server, and access to this particular athletics database.
+ */
 public class AthleticsDatabase {
 
   Scanner scan = new Scanner(System.in);
 
-
+    // Creates connection with the Server
   public Connection getConnection() throws SQLException {
     Connection conn;
     Properties props = new Properties();
@@ -31,10 +33,11 @@ public class AthleticsDatabase {
 
   Connection conn;
 
+    // Runs main program
   public void run() {
 
 
-
+      // creates connection
     try {
       conn = getConnection();
       System.out.println("Connected to database");
@@ -45,7 +48,9 @@ public class AthleticsDatabase {
     }
 
     boolean cont = true;
-
+      /** "Main menu" so to speak, prompts for desired action
+       * a proper entry would be something like 'add coach' or 'search team'
+       */
     while (cont) {
       System.out.println("\nWhat would you like to do?");
       System.out.println("[add/remove/search] [athlete/coach/game/team], or [exit]");
@@ -73,6 +78,7 @@ public class AthleticsDatabase {
 
   }
 
+    // Method to add an object to the database
   public void add(String object) {
 
     switch (object) {
@@ -176,7 +182,8 @@ public class AthleticsDatabase {
     	  break;
     }
   }
-
+    
+    // Method to remove an object from the database
   public void remove(String object) {
 
     switch (object) {
@@ -233,6 +240,7 @@ public class AthleticsDatabase {
 	  
   }
 
+        // Method to search for an object in the database
   public void search(String object) {
 
     switch(object) {
@@ -259,6 +267,7 @@ public class AthleticsDatabase {
     }
   }
 
+    // Method to search for an athlete
   void athleteSearch(String searchParam) {
     ResultSet rs = null;
     switch(searchParam) {
@@ -315,6 +324,7 @@ public class AthleticsDatabase {
     }
   }
 
+    // Method to search for a coach
   void coachSearch(String searchParam) {
     ResultSet rs = null;
     switch (searchParam) {
@@ -359,6 +369,7 @@ public class AthleticsDatabase {
     }
   }
 
+    // Method to search for a team
   void teamSearch(String searchParam) {
 	  ResultSet rs = null;
 	    switch (searchParam) {
@@ -405,7 +416,7 @@ public class AthleticsDatabase {
 	    
   }
  
-
+    // Method to search for a game
   void gameSearch(String searchParam) {
 	  ResultSet rs = null;
 	    switch (searchParam) {
@@ -442,6 +453,7 @@ public class AthleticsDatabase {
 	  }
   }
  
+    // Runs the program
   public static void main(String[] args) {
     AthleticsDatabase app = new AthleticsDatabase();
     app.run();
